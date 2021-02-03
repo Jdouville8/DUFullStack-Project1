@@ -13,6 +13,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
+      // handling for the last.fm response data
       $("#PLACEHOLDER FOR ID").text(response.artist.name);
       // var similar = response.artist.similar.artist;
       // $.each(similar, function(i) {
