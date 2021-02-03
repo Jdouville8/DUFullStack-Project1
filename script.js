@@ -13,9 +13,18 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      $("#PLACEHOLDER FOR ID").text(response.artist.name);
+      // var similar = response.artist.similar.artist;
+      // $.each(similar, function(i) {
+      //   var similarArtist = similar[i];
+      //   var newDiv = $("<div>");
+      //   newDiv.addClass("");
+      //   newDiv.text(similarArtist);
+      //   $("PLACEHOLDER").append(newDiv);
+      // })
     });
   }
+
   function musicVideo(artist) {
     var artist;
     var queryURL =
