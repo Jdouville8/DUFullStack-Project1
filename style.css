@@ -1,0 +1,16 @@
+.brand-logo {
+  padding: 20px 0 20px 0;
+  font-family: fantasy;
+}
+
+.artist-input {
+  padding: 50px;
+}
+.card-horizontal {
+  margin: 10%;
+  width: 8rem;
+}
+h2 {
+  font-size: 20px;
+  font-family: fantasy;
+}
