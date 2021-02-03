@@ -8,7 +8,7 @@ $(document).ready(function () {
       "&api_key=" +
       apiKey +
       "&format=json";
-
+    // comment
     $.ajax({
       url: queryURL,
       method: "GET",
