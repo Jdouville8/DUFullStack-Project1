@@ -6,6 +6,11 @@
 .artist-input {
   padding: 50px;
 }
+
+.artist-results {
+  font-family: "Monoton", cursive;
+}
+
 .card-horizontal {
   margin: 10%;
   width: 8rem;
