@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  function artistInfo() {
-    var artist = "Sunami";
+  function artistInfo(artist) {
+    var artist;
     var apiKey = "f02edefb391a21cbdfb37796f1e48351";
     var queryURL =
       "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
@@ -16,11 +16,11 @@ $(document).ready(function () {
       console.log(response);
     });
   }
-  function musicVideo() {
-    var term = "Kanye West Runaway";
+  function musicVideo(artist) {
+    var artist;
     var queryURL =
       "https://itunes.apple.com/search?term=" +
-      term +
+      artist +
       "&country=US&entity=musicVideo";
     $.ajax({
       url: queryURL,
@@ -29,6 +29,12 @@ $(document).ready(function () {
       console.log(JSON.parse(response));
     });
   }
-  artistInfo();
-  musicVideo();
+  // artistInfo();
+  // musicVideo();
+
+  $("#find-artist").on("click", function (event) {
+    event.preventDefault();
+    var artist = $("#artist-input").val();
+    artistInfo(artist);
+  });
 });
