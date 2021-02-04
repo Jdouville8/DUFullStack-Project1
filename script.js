@@ -57,4 +57,10 @@ $(document).ready(function () {
   // Floating Action Button
   $('.fixed-action-btn').floatingActionButton();
 
+  $("#download-button").on("click", function (event) {
+    event.preventDefault();
+    var artist = $("#artist-input").val();
+    artistInfo(artist);
+  });
+
 });
