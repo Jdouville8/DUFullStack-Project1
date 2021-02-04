@@ -15,13 +15,17 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response)
       $("#PLACEHOLDER FOR ID").text(response.artist.name);
+
+      // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
+      $("#artist-bio").text(response.artist.bio.summary);
       var similar = response.artist.similar.artist;
+      // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function(i) {
-        var similarArtist = similar[i];
-        var newDiv = $("<div>");
-        newDiv.addClass("");
+        var similarArtist = response.artist.similar.artist[i].name;
+        var newDiv = $("<li>");
+        newDiv.addClass("sim-artist");
         newDiv.text(similarArtist);
-        $("PLACEHOLDER").append(newDiv);
+        $("#similar-artists").append(newDiv);
       })
     });
   }

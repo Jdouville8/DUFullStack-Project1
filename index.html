@@ -31,7 +31,7 @@
   <body>
     <div class="container">
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper teal lighten-3">
           <a href="#" class="brand-logo center"
             >Music Locator<i class="far fa-compass m-2"></i
           ></a>
@@ -39,7 +39,7 @@
       </nav>
       <div>
         <form id="Search-artist">
-          <div style="background-color: whitesmoke">
+          <div class="grey lighten-3">
             <label for="city-input">Search an artist below</label>
             <input type="text" id="artist-input" /><br />
           </div>
@@ -48,51 +48,75 @@
       </div>
 
       <!-- Here is where the results of search will be displayed -->
+
+      
       <div class="container-fluid">
         <div>
           <h2 class="header white-text artist-results center-align">
             Artist Results
           </h2>
+
+          <!-- Artist Bio -->
           <div class="card horizontal">
             <div class="card-stacked">
               <div class="card-content">
-                <p>artist info pop up here</p>
+                <h2 class="left-align" style="margin-left: 15px">Artist Bio</h2>
+                <div class="row">
+                  <div class="col s12 m3">
+                    <div class="card">
+                      <div class="card-content">
+                        <p>
+                          We could potentially put an image of artist here using ITUNES API
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s9 m9">
+                    <div class="card-content">
+                      <p id="artist-bio">
+                        Some bio information will populate here when you search an artist
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="card-action">
                 <a href="#">This is a link</a>
               </div>
             </div>
           </div>
+
+          <!-- Similar Artists -->
           <div class="card horizontal">
             <div class="card-stacked">
               <div class="card-content">
-                <p>artist info pop up here</p>
+                <h2 class="left-align" style="margin-left: 15px">Similar Artists</h2>
+                <div class="row">
+                  <div class="col s12 m3">
+                    <div class="card">
+                      <div class="card-content">
+                        <p>
+                          We could potentially put an image of artist here using ITUNES API
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s9 m9">
+                    <div class="card-content">
+                      <ol id="similar-artists">
+
+                      </ol>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="card-action">
                 <a href="#">This is a link</a>
               </div>
             </div>
           </div>
-          <div class="card horizontal">
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>artist info pop up here</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="card horizontal">
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>artist info pop up here</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
+
+
         </div>
       </div>
     </div>
