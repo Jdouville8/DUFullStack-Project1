@@ -17,8 +17,8 @@ $(document).ready(function () {
       $("#artist-name").text(response.artist.name);
 
       // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
-      var biography = response.artist.bio.summary.split('<')[0];
-      $("#artist-bio").text(biography)
+      var biography = response.artist.bio.summary.split("<")[0];
+      $("#artist-bio").text(biography);
       var similar = response.artist.similar.artist;
       $("#similar-artists").empty();
       // For loop that iterates through artist object to pull each similar artist
@@ -48,6 +48,10 @@ $(document).ready(function () {
   // artistInfo();
   // musicVideo();
 
+  function redirect(artist) {
+    window.open("https://last.fm/music/" + artist, "_blank");
+  }
+
   $("#find-artist").on("click", function (event) {
     event.preventDefault();
     var artist = $("#artist-input").val();
@@ -55,14 +59,11 @@ $(document).ready(function () {
   });
 
   // Floating Action Button
-  $('.fixed-action-btn').floatingActionButton();
+  $(".fixed-action-btn").floatingActionButton();
 
   $("#download-button").on("click", function (event) {
     event.preventDefault();
     var artist = $("#artist-input").val();
-    artistInfo(artist);
+    redirect(artist);
   });
-
 });
-
-
