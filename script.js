@@ -14,7 +14,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       console.log(response)
-      $("#PLACEHOLDER FOR ID").text(response.artist.name);
+      $("#artist-name").text(response.artist.name);
 
       // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
       $("#artist-bio").text(response.artist.bio.summary);
