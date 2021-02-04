@@ -32,3 +32,9 @@ $(document).ready(function () {
   artistInfo();
   musicVideo();
 });
+
+$("#find-artist").on("click", function (event) {
+  event.preventDefault();
+  var artist = $("#artist-input").val();
+  artistInfo(artist);
+});

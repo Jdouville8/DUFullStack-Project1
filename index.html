@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"rel="stylesheet"/>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <title>Document</title>
@@ -16,12 +18,12 @@
     <div class="container">
      <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Music Locator</a>
+          <a href="#" class="brand-logo center">Music Locator<i class="far fa-compass"></i></a>
         </div>
       </nav>
       <div>
         <form id="Search-artist">
-            <label for="city-input">Search an artist below</label>
+            <div><label for="city-input">Search an artist below</label></div>
             <input type="text" id="artist-input"><br>
             <input id="find-artist" type="submit" value="Search Artist">
         </form>
@@ -29,7 +31,7 @@
     
      <div class="container">
         <div class="row">
-        <div class="col md-8">
+        <div class="col md 8">
         <h2 class="header">Artist Results</h2>
         <div class="card horizontal">
           <div class="card-image">
@@ -53,6 +55,10 @@
         <h2>Created by: Seth | Justin | David | Kristen</h2>
     </footer> -->
 </body>
+<script
+    src="https://kit.fontawesome.com/e19c2364b2.js"
+    crossorigin="anonymous"
+  ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./script.js"></script>
 </html>
