@@ -19,7 +19,9 @@ $(document).ready(function () {
       // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
       var biography = response.artist.bio.summary.split('<')[0];
       $("#artist-bio").text(biography)
+      $
       var similar = response.artist.similar.artist;
+
       $("#similar-artists").empty();
       // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function (i) {
