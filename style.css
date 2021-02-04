@@ -27,7 +27,8 @@ body {
 
 h2 {
   font-size: 30px;
-  font-family: fantasy;
+  font-family: "Raleway", sans-serif;
+  text-decoration: underline;
 }
 
 body {
