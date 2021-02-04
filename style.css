@@ -7,20 +7,31 @@ body {
   padding: 20px 0 20px 0;
   font-family: "Monoton", cursive;
 }
-.search-artist {
-  background-color: white;
-}
 
 .artist-input {
   padding: 50px;
 }
+
+.artist-results {
+  font-family: "Monoton", cursive;
+}
+
 .card-horizontal {
   margin: 10%;
   width: 8rem;
 }
+
+.infoHolder {
+  border-radius: 1%;
+}
+
 h2 {
-  text-align: center;
-  color: aliceblue;
-  font-size: 20px;
+  font-size: 30px;
   font-family: fantasy;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

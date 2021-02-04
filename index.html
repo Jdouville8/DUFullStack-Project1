@@ -1,64 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Links -->
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="materialize/css/materialize.min.css"
+      media="screen,projection"
+    />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-</head>
-<body>
-
-    <div class="container">
-     <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Music Locator<i class="far fa-compass"></i></a>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container infoHolder">
+      <nav>
+        <div class="nav-wrapper teal lighten-3">
+          <a href="#" class="brand-logo center"
+            >Music Locator<i class="far fa-compass m-2"></i
+          ></a>
         </div>
       </nav>
       <div>
         <form id="Search-artist">
-            <div><label for="city-input">Search an artist below</label></div>
-            <input type="text" id="artist-input"><br>
-            <input id="find-artist" type="submit" value="Search Artist">
+          <div class="grey lighten-3">
+            <label for="city-input">Search an artist below</label>
+            <input type="text" id="artist-input" /><br />
+          </div>
+          <input id="find-artist" type="submit" value="Search Artist" />
         </form>
       </div>
-    
-     <div class="container">
-        <div class="row">
-        <div class="col md 8">
-        <h2 class="header">Artist Results</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img src="https://lorempixel.com/100/190/nature/6">
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p>artist info pop up here</p>
+
+      <!-- Here is where the results of search will be displayed -->
+
+      
+      <div class="container-fluid">
+        <div>
+          <h2 class="header white-text artist-results center-align">
+            Artist Results
+          </h2>
+
+          <!-- Artist Bio -->
+          <div class="card horizontal infoHolder">
+            <div class="card-stacked">
+              <div class="card-content">
+                <h2 id="artist-name" class="center-align" style="margin-left: 15px">Artist Name</h2>
+                <h2 class="left-align" style="margin-left: 15px">Artist Bio</h2>
+                <div class="row">
+                  <div class="col s12 m3">
+                    <div class="card">
+                      <div class="card-content">
+                        <p>
+                          We could potentially put an image of artist here using ITUNES API
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s9 m9">
+                    <div class="card-content">
+                      <p id="artist-bio">
+                        Some bio information will populate here when you search an artist
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
+          </div>
+
+          <!-- Similar Artists -->
+          <div class="card horizontal infoHolder">
+            <div class="card-stacked">
+              <div class="card-content">
+                <h2 class="left-align" style="margin-left: 15px">Similar Artists</h2>
+                <div class="row">
+                  <div class="col s12 m3">
+                    <div class="card">
+                      <div class="card-content">
+                        <p>
+                          We could potentially put an image of artist here using ITUNES API
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s9 m9">
+                    <div class="card-content">
+                      <ol id="similar-artists">
+
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
             </div>
           </div>
+
+
         </div>
       </div>
-    </div>
-    </div>
     </div>
 
     <!-- <footer>
         <h2>Created by: Seth | Justin | David | Kristen</h2>
     </footer> -->
-</body>
-<script
+  </body>
+  <script
     src="https://kit.fontawesome.com/e19c2364b2.js"
     crossorigin="anonymous"
   ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
 </html>
