@@ -32,21 +32,20 @@ $(document).ready(function () {
     });
   }
 
-  function musicVideo(artist) {
-    var artist;
+  function audioDB(artist) {
+    var apiKey = "523537";
     var queryURL =
-      "https://itunes.apple.com/search?term=" +
-      artist +
-      "&country=US&entity=musicVideo";
+      "https://theaudiodb.com/api/v1/json/" +
+      apiKey +
+      "/searchalbum.php?s=" +
+      artist;
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(JSON.parse(response));
+      console.log(response);
     });
   }
-  // artistInfo();
-  // musicVideo();
 
   function redirect(artist) {
     window.open("https://last.fm/music/" + artist, "_blank");
@@ -56,6 +55,7 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
+    audioDB(artist);
   });
 
   // Floating Action Button
@@ -65,5 +65,6 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     redirect(artist);
+    audioDB(artist);
   });
 });
