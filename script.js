@@ -8,26 +8,27 @@ $(document).ready(function () {
       "&api_key=" +
       apiKey +
       "&format=json";
-
+    // comment
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response)
+      console.log(response);
       $("#artist-name").text(response.artist.name);
 
       // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
       var biography = response.artist.bio.summary.split('<')[0];
       $("#artist-bio").text(biography)
       var similar = response.artist.similar.artist;
+      $("#similar-artists").empty();
       // For loop that iterates through artist object to pull each similar artist
-      $.each(similar, function(i) {
+      $.each(similar, function (i) {
         var similarArtist = response.artist.similar.artist[i].name;
-        var newDiv = $("<li>");
-        newDiv.addClass("sim-artist");
-        newDiv.text(similarArtist);
-        $("#similar-artists").append(newDiv);
-      })
+        var newLi = $("<li>");
+        newLi.addClass("sim-artist");
+        newLi.text(similarArtist);
+        $("#similar-artists").append(newLi);
+      });
     });
   }
 
