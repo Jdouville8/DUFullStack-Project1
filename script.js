@@ -8,7 +8,6 @@ $(document).ready(function () {
       "&api_key=" +
       apiKey +
       "&format=json";
-    // comment
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -47,6 +46,30 @@ $(document).ready(function () {
     });
   }
 
+  function load() {
+    var artistsSearched = JSON.parse(localStorage.getItem("searches"));
+    if (artistsSearched) {
+      $.each(artistsSearched, function (i) {
+        var artist = artistsSearched[i];
+        var newLi = $("PLACEHOLDER");
+        newLi.addClass("PLACEHOLDER");
+        newLi.text(artist);
+        $("PLACEHOLDER").append(newLi);
+      });
+    }
+  }
+
+  function store(artist) {
+    var artistsSearched = JSON.parse(localStorage.getItem("searches"));
+    if (!artistsSearched) {
+      artistsSearched = [];
+    }
+    if (artistsSearched.includes(artist) === false) {
+      artistsSearched.push(artist);
+    }
+    localStorage.setItem("searches", JSON.stringify(artistsSearched));
+  }
+
   function redirect(artist) {
     window.open("https://last.fm/music/" + artist, "_blank");
   }
@@ -56,6 +79,7 @@ $(document).ready(function () {
     var artist = $("#artist-input").val();
     artistInfo(artist);
     audioDB(artist);
+    store(artist);
   });
 
   // Floating Action Button
@@ -67,4 +91,5 @@ $(document).ready(function () {
     redirect(artist);
     audioDB(artist);
   });
+  load();
 });
