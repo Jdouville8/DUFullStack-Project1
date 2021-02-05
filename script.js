@@ -57,12 +57,12 @@ $(document).ready(function () {
   function load() {
     var artistsSearched = JSON.parse(localStorage.getItem("searches"));
     if (artistsSearched) {
+      $("#search-items").empty();
       $.each(artistsSearched, function (i) {
         var artist = artistsSearched[i];
-        var newLi = $("PLACEHOLDER");
-        newLi.addClass("PLACEHOLDER");
-        newLi.text(artist);
-        $("PLACEHOLDER").append(newLi);
+        var newP = $("<p>");
+        newP.text(artist);
+        $("#search-items").append(newP);
       });
     }
   }
@@ -90,6 +90,11 @@ $(document).ready(function () {
     store(artist);
   });
 
+  $("#recent-searches").on("click", function (event) {
+    event.preventDefault();
+    load();
+  });
+
   // Floating Action Button
   $(".fixed-action-btn").floatingActionButton();
 
@@ -101,6 +106,8 @@ $(document).ready(function () {
 
   // Discography Carousel
   $(".carousel").carousel();
+  //Modal init
+  $(".modal").modal();
 
   load();
 });
