@@ -30,7 +30,6 @@ $(document).ready(function () {
         newLi.text(similarArtist);
         $("#similar-artists").append(newLi);
       });
-      
     });
   }
 
@@ -46,6 +45,13 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (discResponse) {
       console.log(discResponse);
+      for (i = 0; i < 10; i++) {
+        var albumArt = discResponse.album[i].strAlbumThumb;
+        console.log(albumArt);
+        var artID = $('#coverart' + i);
+        console.log(artID);
+        artID.attr("src", albumArt);
+      }
     });
   }
 
@@ -69,4 +75,7 @@ $(document).ready(function () {
     redirect(artist);
     audioDB(artist);
   });
+
+  // Discography Carousel
+    $('.carousel').carousel();
 });

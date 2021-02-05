@@ -7,11 +7,22 @@ body {
   padding: 20px 0 20px 0;
   font-family: "Monoton", cursive;
 }
-
-.artist-input {
-  padding: 50px;
+#find-artist {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  background-color: rgb(95, 211, 211);
+  width: 20%;
 }
-
+input:active {
+  color: blue;
+}
+input:hover {
+  font-family: fantasy;
+  color: white;
+}
+#artist-input {
+  font-family: "Raleway", sans-serif;
+}
 .artist-results {
   font-family: "Monoton", cursive;
 }
@@ -23,6 +34,9 @@ body {
 
 .infoHolder {
   border-radius: 1%;
+  border: 20px;
+  border-color: black;
+  border-style: solid;
 }
 
 h2 {
