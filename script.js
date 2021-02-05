@@ -48,7 +48,7 @@ $(document).ready(function () {
     });
   }
 
-  musicStory();
+  // musicStory();
 
   function discog(artist) {
     var apiKey = "523537";
