@@ -32,13 +32,27 @@ $(document).ready(function () {
     });
   }
 
-  function audioDB(artist) {
+  function discog(artist) {
     var apiKey = "523537";
     var queryURL =
       "https://theaudiodb.com/api/v1/json/" +
       apiKey +
       "/searchalbum.php?s=" +
       artist;
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      console.log(response);
+    });
+  }
+
+  function topTracks() {
+    var apiKey = "523537";
+    var queryURL =
+      "https://theaudiodb.com/api/v1/json/" +
+      apiKey +
+      "/trending.php?country=us&type=itunes&format=albums";
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -55,7 +69,7 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
-    audioDB(artist);
+    topTracks(artist);
   });
 
   // Floating Action Button
@@ -65,6 +79,5 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     redirect(artist);
-    audioDB(artist);
   });
 });
