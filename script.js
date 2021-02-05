@@ -64,10 +64,19 @@ $(document).ready(function () {
       console.log(discResponse);
       for (i = 0; i < 10; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
-        // console.log(albumArt);
+        var albumTitle = discResponse.album[i].strAlbum;
+        var albumYear = discResponse.album[i].intYearReleased;
+        var albumDescription = discResponse.album[i].strDescriptionEN;
+        console.log(albumArt);
         var artID = $("#coverart" + i);
-        // console.log(artID);
+        var nameID = $("#disc-title" + i);
+        var yearID = $("#disc-year" + i);
+        var desccriptionID = $("#disc-desc" + i);
+        var artID = $("#coverart" + i);
         artID.attr("src", albumArt);
+        nameID.html(albumTitle);
+        yearID.html(albumYear);
+        desccriptionID.html(albumDescription);
       }
     });
   }
@@ -124,7 +133,8 @@ $(document).ready(function () {
 
   // Discography Carousel
   $(".carousel").carousel();
-  //Modal init
+
+  // Modal initialize
   $(".modal").modal();
 
   load();
