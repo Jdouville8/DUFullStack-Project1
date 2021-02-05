@@ -47,7 +47,7 @@ $(document).ready(function () {
       for (i = 0; i < 10; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         console.log(albumArt);
-        var artID = $('#coverart' + i);
+        var artID = $("#coverart" + i);
         console.log(artID);
         artID.attr("src", albumArt);
       }
@@ -86,7 +86,7 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
-    audioDB(artist);
+    discog(artist);
     store(artist);
   });
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
   });
 
   // Discography Carousel
-    $('.carousel').carousel();
-    
+  $(".carousel").carousel();
+
   load();
 });
