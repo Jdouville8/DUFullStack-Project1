@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
   }
 
-  function audioDB(artist) {
+  function discog(artist) {
     var apiKey = "523537";
     var queryURL =
       "https://theaudiodb.com/api/v1/json/" +
@@ -47,7 +47,7 @@ $(document).ready(function () {
       for (i = 0; i < 10; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         console.log(albumArt);
-        var artID = $('#coverart' + i);
+        var artID = $("#coverart" + i);
         console.log(artID);
         artID.attr("src", albumArt);
       }
@@ -57,12 +57,12 @@ $(document).ready(function () {
   function load() {
     var artistsSearched = JSON.parse(localStorage.getItem("searches"));
     if (artistsSearched) {
+      $("#search-items").empty();
       $.each(artistsSearched, function (i) {
         var artist = artistsSearched[i];
-        var newLi = $("PLACEHOLDER");
-        newLi.addClass("PLACEHOLDER");
-        newLi.text(artist);
-        $("PLACEHOLDER").append(newLi);
+        var newP = $("<p>");
+        newP.text(artist);
+        $("#search-items").append(newP);
       });
     }
   }
@@ -86,8 +86,13 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
-    audioDB(artist);
+    discog(artist);
     store(artist);
+  });
+
+  $("#recent-searches").on("click", function (event) {
+    event.preventDefault();
+    load();
   });
 
   // Floating Action Button
@@ -97,11 +102,12 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     redirect(artist);
-    audioDB(artist);
   });
 
   // Discography Carousel
-    $('.carousel').carousel();
-    
+  $(".carousel").carousel();
+  //Modal init
+  $(".modal").modal();
+
   load();
 });
