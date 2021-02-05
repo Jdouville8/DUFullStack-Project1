@@ -44,6 +44,11 @@ input:hover {
   border-style: outset;
 }
 
+li:hover {
+  font-weight: bolder;
+  color: purple;
+}
+
 h2 {
   font-size: 30px;
   font-family: "Raleway", sans-serif;
