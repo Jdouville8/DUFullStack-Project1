@@ -14,12 +14,12 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response);
       $("#artist-name").text(response.artist.name);
-
-      // !!!! Maybe JSON Parse or stringify to pull tag from bio summary? As of right now it is a part of the text !!!
       var biography = response.artist.bio.summary.split("<")[0];
       $("#artist-bio").text(biography);
       var similar = response.artist.similar.artist;
+
       $("#similar-artists").empty();
+      
       // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function (i) {
         var similarArtist = response.artist.similar.artist[i].name;
@@ -31,7 +31,25 @@ $(document).ready(function () {
     });
   }
 
-  function audioDB(artist) {
+  function musicStory() {
+    var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
+    var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
+    var queryURL =
+      "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
+      consumerKey +
+      "&oauth_signature=" +
+      secretKey;
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (imgResponse) {
+      console.log(imgResponse);
+    });
+  }
+
+  // musicStory();
+
+  function discog(artist) {
     var apiKey = "523537";
     var queryURL =
       "https://theaudiodb.com/api/v1/json/" +
@@ -41,20 +59,36 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: "GET",
-    }).then(function (response) {
-      console.log(response);
+    }).then(function (discResponse) {
+      console.log(discResponse);
+      for (i = 0; i < 10; i++) {
+        var albumArt = discResponse.album[i].strAlbumThumb;
+        var albumTitle = discResponse.album[i].strAlbum;
+        var albumYear = discResponse.album[i].intYearReleased;
+        var albumDescription = discResponse.album[i].strDescriptionEN;
+        console.log(albumArt);
+        var artID = $("#coverart" + i);
+        var nameID = $("#disc-title" + i);
+        var yearID = $("#disc-year" + i);
+        var desccriptionID = $("#disc-desc" + i);
+        var artID = $("#coverart" + i);
+        artID.attr("src", albumArt);
+        nameID.html(albumTitle);
+        yearID.html(albumYear);
+        desccriptionID.html(albumDescription);
+      }
     });
   }
 
   function load() {
     var artistsSearched = JSON.parse(localStorage.getItem("searches"));
     if (artistsSearched) {
+      $("#search-items").empty();
       $.each(artistsSearched, function (i) {
         var artist = artistsSearched[i];
-        var newLi = $("PLACEHOLDER");
-        newLi.addClass("PLACEHOLDER");
-        newLi.text(artist);
-        $("PLACEHOLDER").append(newLi);
+        var newP = $("<p>");
+        newP.text(artist);
+        $("#search-items").append(newP);
       });
     }
   }
@@ -78,7 +112,19 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
-    audioDB(artist);
+    discog(artist);
+    store(artist);
+  });
+
+  $("#recent-searches").on("click", function (event) {
+    event.preventDefault();
+    load();
+  });
+
+  $(document).on("click", ".sim-artist", function () {
+    var artist = $(this).text();
+    artistInfo(artist);
+    discog(artist);
     store(artist);
   });
 
@@ -89,7 +135,13 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     redirect(artist);
-    audioDB(artist);
   });
+
+  // Discography Carousel
+  $(".carousel").carousel();
+
+  // Modal initialize
+  $(".modal").modal();
+
   load();
 });

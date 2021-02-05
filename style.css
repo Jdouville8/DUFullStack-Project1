@@ -61,10 +61,24 @@ p {
   color: black;
   font-size: 20px;
 }
+
+li:hover {
+  font-weight: bolder;
+  color: purple;
+}
+
 h2 {
   font-size: 30px;
   font-family: "Raleway", sans-serif;
   text-decoration: underline;
+  padding: 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: underline;
+  padding: 0;
 }
 
 h3 {
@@ -74,8 +88,8 @@ h3 {
   color: white;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   body {
     background-color: blueviolet;
   }
-}
+} */
