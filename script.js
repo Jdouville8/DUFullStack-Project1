@@ -8,7 +8,6 @@ $(document).ready(function () {
       "&api_key=" +
       apiKey +
       "&format=json";
-    // comment
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -47,18 +46,28 @@ $(document).ready(function () {
     });
   }
 
-  function topTracks() {
-    var apiKey = "523537";
-    var queryURL =
-      "https://theaudiodb.com/api/v1/json/" +
-      apiKey +
-      "/trending.php?country=us&type=itunes&format=albums";
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      console.log(response);
-    });
+  function load() {
+    var artistsSearched = JSON.parse(localStorage.getItem("searches"));
+    if (artistsSearched) {
+      $.each(artistsSearched, function (i) {
+        var artist = artistsSearched[i];
+        var newLi = $("PLACEHOLDER");
+        newLi.addClass("PLACEHOLDER");
+        newLi.text(artist);
+        $("PLACEHOLDER").append(newLi);
+      });
+    }
+  }
+
+  function store(artist) {
+    var artistsSearched = JSON.parse(localStorage.getItem("searches"));
+    if (!artistsSearched) {
+      artistsSearched = [];
+    }
+    if (artistsSearched.includes(artist) === false) {
+      artistsSearched.push(artist);
+    }
+    localStorage.setItem("searches", JSON.stringify(artistsSearched));
   }
 
   function redirect(artist) {
@@ -69,7 +78,8 @@ $(document).ready(function () {
     event.preventDefault();
     var artist = $("#artist-input").val();
     artistInfo(artist);
-    topTracks(artist);
+    audioDB(artist);
+    store(artist);
   });
 
   // Floating Action Button
@@ -80,4 +90,5 @@ $(document).ready(function () {
     var artist = $("#artist-input").val();
     redirect(artist);
   });
+  load();
 });
