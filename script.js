@@ -122,6 +122,13 @@ $(document).ready(function () {
     load();
   });
 
+  $(document).on("click", ".sim-artist", function () {
+    var artist = $(this).text();
+    artistInfo(artist);
+    discog(artist);
+    store(artist);
+  });
+
   // Floating Action Button
   $(".fixed-action-btn").floatingActionButton();
 
