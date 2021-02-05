@@ -1,7 +1,15 @@
 body {
-  background-image: url(https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-image: url(https://images.unsplash.com/photo-1598363943803-54a01af6fec1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fHZ5bmlsJTIwcmVjb3Jkc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.nav-wrapper {
+  background-color: maroon;
+  margin-top: 5%;
+  border-radius: 1%;
+  border: 10px;
+  border-color: #add8e6;
+  border-style: inset;
 }
 .brand-logo {
   padding: 20px 0 20px 0;
@@ -10,11 +18,8 @@ body {
 #find-artist {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  background-color: rgb(95, 211, 211);
+  background-color: #add8e6;
   width: 20%;
-}
-input:active {
-  color: blue;
 }
 input:hover {
   font-family: fantasy;
@@ -34,19 +39,28 @@ input:hover {
 
 .infoHolder {
   border-radius: 1%;
-  border: 20px;
-  border-color: black;
-  border-style: solid;
+  border: 10px;
+  border-color: orange;
+  border-style: outset;
 }
 
 h2 {
   font-size: 30px;
   font-family: "Raleway", sans-serif;
   text-decoration: underline;
+  padding: 0;
 }
 
-body {
-  background-image: url(https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-  background-repeat: no-repeat;
-  background-size: cover;
+h3 {
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: underline;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Monoton", cursive;
+  color: white;
 }

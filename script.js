@@ -19,6 +19,7 @@ $(document).ready(function () {
       var biography = response.artist.bio.summary.split("<")[0];
       $("#artist-bio").text(biography);
       var similar = response.artist.similar.artist;
+
       $("#similar-artists").empty();
       // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function (i) {
@@ -41,8 +42,15 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: "GET",
-    }).then(function (response) {
-      console.log(response);
+    }).then(function (discResponse) {
+      console.log(discResponse);
+      for (i = 0; i < 10; i++) {
+        var albumArt = discResponse.album[i].strAlbumThumb;
+        console.log(albumArt);
+        var artID = $('#coverart' + i);
+        console.log(artID);
+        artID.attr("src", albumArt);
+      }
     });
   }
 
@@ -90,5 +98,9 @@ $(document).ready(function () {
     var artist = $("#artist-input").val();
     redirect(artist);
   });
+
+  // Discography Carousel
+    $('.carousel').carousel();
+    
   load();
 });
