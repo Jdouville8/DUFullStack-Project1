@@ -32,6 +32,24 @@ $(document).ready(function () {
     });
   }
 
+  function musicStory() {
+    var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
+    var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
+    var queryURL =
+      "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
+      consumerKey +
+      "&oauth_signature=" +
+      secretKey;
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (imgResponse) {
+      console.log(imgResponse);
+    });
+  }
+
+  musicStory();
+
   function discog(artist) {
     var apiKey = "523537";
     var queryURL =
@@ -50,12 +68,11 @@ $(document).ready(function () {
         var albumYear = discResponse.album[i].intYearReleased;
         var albumDescription = discResponse.album[i].strDescriptionEN;
         console.log(albumArt);
-        var artID = $('#coverart' + i);
-        var nameID = $('#disc-title' + i);
-        var yearID = $('#disc-year' + i);
-        var desccriptionID = $('#disc-desc' + i);
         var artID = $("#coverart" + i);
-        console.log(artID);
+        var nameID = $("#disc-title" + i);
+        var yearID = $("#disc-year" + i);
+        var desccriptionID = $("#disc-desc" + i);
+        var artID = $("#coverart" + i);
         artID.attr("src", albumArt);
         nameID.html(albumTitle);
         yearID.html(albumYear);
@@ -105,6 +122,13 @@ $(document).ready(function () {
     load();
   });
 
+  $(document).on("click", ".sim-artist", function () {
+    var artist = $(this).text();
+    artistInfo(artist);
+    discog(artist);
+    store(artist);
+  });
+
   // Floating Action Button
   $(".fixed-action-btn").floatingActionButton();
 
@@ -115,10 +139,10 @@ $(document).ready(function () {
   });
 
   // Discography Carousel
-    $('.carousel').carousel();
+  $(".carousel").carousel();
 
   // Modal initialize
-    $('.modal').modal();
+  $(".modal").modal();
 
   load();
 });
