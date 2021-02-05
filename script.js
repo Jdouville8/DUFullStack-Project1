@@ -3,7 +3,7 @@ $(document).ready(function () {
     var artist;
     var apiKey = "f02edefb391a21cbdfb37796f1e48351";
     var queryURL =
-      "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
+      "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
       artist +
       "&api_key=" +
       apiKey +
@@ -19,7 +19,7 @@ $(document).ready(function () {
       var similar = response.artist.similar.artist;
 
       $("#similar-artists").empty();
-      
+
       // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function (i) {
         var similarArtist = response.artist.similar.artist[i].name;
