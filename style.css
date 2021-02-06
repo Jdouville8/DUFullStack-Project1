@@ -63,7 +63,8 @@ p {
 }
 
 li:hover {
-  font-weight: bolder;
+  font-weight: 1000;
+  cursor: default;
   color: purple;
 }
 

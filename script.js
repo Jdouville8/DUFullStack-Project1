@@ -31,21 +31,21 @@ $(document).ready(function () {
     });
   }
 
-  function musicStory() {
-    var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
-    var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
-    var queryURL =
-      "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
-      consumerKey +
-      "&oauth_signature=" +
-      secretKey;
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (imgResponse) {
-      console.log(imgResponse);
-    });
-  }
+  // function musicStory() {
+  //   var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
+  //   var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
+  //   var queryURL =
+  //     "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
+  //     consumerKey +
+  //     "&oauth_signature=" +
+  //     secretKey;
+  //   $.ajax({
+  //     url: queryURL,
+  //     method: "GET",
+  //   }).then(function (imgResponse) {
+  //     console.log(imgResponse);
+  //   });
+  // }
 
   // musicStory();
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
       var cardImg1 = discResponse.album[1].strAlbumThumb;
       $("#card-image0").attr("src", cardImg0);
       $("#card-image1").attr("src", cardImg1);
-      for (i = 0; i < 10; i++) {
+      for (i = 0; i < 8; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         var albumTitle = discResponse.album[i].strAlbum;
         var albumYear = discResponse.album[i].intYearReleased;
