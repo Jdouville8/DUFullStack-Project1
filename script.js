@@ -61,7 +61,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (discResponse) {
       console.log(discResponse);
-      for (i = 0; i < 10; i++) {
+      for (i = 0; i < 7; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         var albumTitle = discResponse.album[i].strAlbum;
         var albumYear = discResponse.album[i].intYearReleased;
