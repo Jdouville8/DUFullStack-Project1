@@ -61,6 +61,10 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (discResponse) {
       console.log(discResponse);
+      var cardImg0 = discResponse.album[0].strAlbumThumb;
+      var cardImg1 = discResponse.album[1].strAlbumThumb;
+      $("#card-image0").attr("src", cardImg0);
+      $("#card-image1").attr("src", cardImg1);
       for (i = 0; i < 10; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         var albumTitle = discResponse.album[i].strAlbum;
