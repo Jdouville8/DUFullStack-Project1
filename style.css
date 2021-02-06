@@ -4,93 +4,127 @@ body {
   background-size: cover;
   image-rendering: auto;
 }
+/* body with background image to fit screen and mobile */
 .nav-wrapper {
-  background-color: orange;
+  background: #2e282a;
   margin-top: 5%;
   border: 10px;
   border-color: lightskyblue;
   border-style: inset;
   padding-bottom: 3%;
 }
+/* nar wrapper designed with border and color */
 .brand-logo {
-  /* padding: 20px 0 20px 0; */
   font-family: "Monoton", cursive;
   padding-bottom: 20px;
 }
+/* brand logo "Music Locator" */
 #find-artist {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  background-color: rgb(38, 148, 38);
+  background-color: #17bebb;
   width: 100%;
   height: 40%;
   border: 6px;
   border-style: solid;
 }
+/* artist search styled button */
 input:hover {
   font-family: fantasy;
   color: white;
 }
+/* search button and recent search with hover design */
+#recent-searches {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  background-color: orange;
+  width: 100%;
+  height: 40%;
+  border: 6px;
+  border-style: solid;
+}
+/* recent search styled button */
 #artist-input {
   font-family: "Raleway", sans-serif;
   font-size: 30px;
   color: black;
 }
+/* text line for searching artists */
 .artist-results {
   font-family: "Monoton", cursive;
 }
-/* a {
-  color: green;
-} */
+/* styled "Artist Results" */
 .card-horizontal {
   margin: 10%;
   width: 8rem;
 }
+/* cards with margins */
 .infoHolder {
-  /* border-radius: 2%; */
   border: 13px;
-  border-color: rgb(180, 32, 32);
+  border-color: #ef3e36;
   border-style: outset;
 }
+/* designed cards to hold artists searched information */
 p {
   font-family: "Raleway", sans-serif;
   color: black;
   font-size: 20px;
 }
+/* paragraphs for  bio to populate in*/
 .card-content {
   font-family: "Raleway", sans-serif;
   color: black;
   font-size: 20px;
 }
-
+/* similar artists content pop up here */
 li:hover {
   font-weight: 1000;
   cursor: default;
   color: purple;
 }
-
+/* hover over links for similar artists */
 h2 {
   font-size: 30px;
   font-family: "Raleway", sans-serif;
+  color: black;
   text-decoration: underline;
   padding: 0;
 }
-
+/* "artist bio" text, "similar artist" text, "discography" text */
 h3 {
+  text-align: center;
   font-size: 20px;
   font-family: "Raleway", sans-serif;
   text-decoration: underline;
   padding: 0;
-}
-
-h3 {
-  text-align: center;
-  font-size: 15px;
-  font-family: "Monoton", cursive;
   color: white;
 }
-
-/* @media screen and (max-width: 600px) {
-  body {
-    background-color: blueviolet;
+/* h3 inside footer - styled */
+@media screen and (min-width: 200px) and (max-width: 734px) {
+  .brandLogo {
+    font-size: 15px !important;
   }
-} */
+  #artist-input {
+    font-size: 15px !important;
+  }
+  #find-artist {
+    font-size: 15px !important;
+  }
+  #recent-searches {
+    font-size: 15px !important;
+  }
+  .artist-results {
+    font-size: 15px !important;
+  }
+  h2 {
+    font-size: 15px !important;
+  }
+  p {
+    font-size: 15px !important;
+  }
+  h3 {
+    font-size: 15px !important;
+  }
+}
+/* media query breakpoints, max width set at 734px for mobile response to kick in */
+/* all font size to shrink to 15px with !important; when page hits 734px. */

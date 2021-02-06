@@ -19,6 +19,8 @@ $(document).ready(function () {
       var biography = response.artist.bio.summary.split("<")[0];
       $("#artist-bio").text(biography);
       var similar = response.artist.similar.artist;
+      $("#lfm-playcount").text(response.artist.stats.playcount);
+      $("#lfm-listeners").text(response.artist.stats.listeners);
 
       // empty the container so we can append
       $("#similar-artists").empty();
