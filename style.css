@@ -78,7 +78,8 @@ p {
 }
 /* similar artists content pop up here */
 li:hover {
-  font-weight: bolder;
+  font-weight: 1000;
+  cursor: default;
   color: purple;
 }
 /* hover over links for similar artists */

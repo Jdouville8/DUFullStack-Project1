@@ -3,7 +3,7 @@ $(document).ready(function () {
     var artist;
     var apiKey = "f02edefb391a21cbdfb37796f1e48351";
     var queryURL =
-      "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
+      "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
       artist +
       "&api_key=" +
       apiKey +
@@ -19,7 +19,7 @@ $(document).ready(function () {
       var similar = response.artist.similar.artist;
 
       $("#similar-artists").empty();
-      
+
       // For loop that iterates through artist object to pull each similar artist
       $.each(similar, function (i) {
         var similarArtist = response.artist.similar.artist[i].name;
@@ -31,21 +31,21 @@ $(document).ready(function () {
     });
   }
 
-  function musicStory() {
-    var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
-    var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
-    var queryURL =
-      "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
-      consumerKey +
-      "&oauth_signature=" +
-      secretKey;
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (imgResponse) {
-      console.log(imgResponse);
-    });
-  }
+  // function musicStory() {
+  //   var consumerKey = "1de799c96e6b06f79913321f3b6f81098403b273";
+  //   var secretKey = "0d1e93e6a3917345e6ee402cf5db08dcaa4fbc2f";
+  //   var queryURL =
+  //     "https://api.music-story.com/oauth/request_token?oauth_consumer_key=" +
+  //     consumerKey +
+  //     "&oauth_signature=" +
+  //     secretKey;
+  //   $.ajax({
+  //     url: queryURL,
+  //     method: "GET",
+  //   }).then(function (imgResponse) {
+  //     console.log(imgResponse);
+  //   });
+  // }
 
   // musicStory();
 
@@ -61,7 +61,7 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (discResponse) {
       console.log(discResponse);
-      for (i = 0; i < 10; i++) {
+      for (i = 0; i < 7; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         var albumTitle = discResponse.album[i].strAlbum;
         var albumYear = discResponse.album[i].intYearReleased;
