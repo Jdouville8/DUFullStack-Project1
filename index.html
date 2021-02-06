@@ -6,20 +6,12 @@
     <!-- Links -->
     <!--Import Google Icon Font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!--Import materialize.css-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="materialize/css/materialize.min.css"
-      media="screen,projection"
-    />
-    <title>DU Full Stack Project #1</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -29,8 +21,21 @@
       href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
       rel="stylesheet"
     />
+
+
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="materialize/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <!-- Container for the search bar -->
     <div class="container">
       <nav>
         <div class="nav-wrapper">
@@ -45,13 +50,14 @@
             <i class="fas fa-search"></i>
             <label for="artist-input">Click to search an artist</label>
             <input type="text" id="artist-input"> </input><br/>
-            
           </div>
           <input id="find-artist" type="submit" value="Search Artist" />
+          <!-- Recent Search button -->
           <input id="recent-searches" class="modal-trigger" type="submit" href="#modal1" value="Recent searches" />
         </form>
       </div>
 
+      <!-- Recent Search button modal -->
       <div id="modal1" class="modal">
         <div class="modal-content">
           <h4>Recent searches</h4>
@@ -65,7 +71,6 @@
       </div>
 
       <!-- Here is where the results of search will be displayed -->
-
       
       <div id="results-container" class="container-fluid">
         <div>
@@ -83,8 +88,9 @@
                   <div class="col s12 m3">
                     <div class="card">
                       <div class="card-content">
-                        <p>
-                          We could potentially put an image of artist here using ITUNES API
+                        <h4 style="font-weight:400; font-size: 30px;">Last FM Listeners</h4>
+                        <p id="lfm-listeners" style="color: rgb(168, 21, 21);">
+                          The total number of listeners via Last FM will populate here
                         </p>
                       </div>
                     </div>
@@ -99,7 +105,6 @@
                 </div>
               </div>
               <div class="card-action">
-                <a href="#"></a>
               </div>
             </div>
           </div>
@@ -113,8 +118,9 @@
                   <div class="col s12 m3">
                     <div class="card">
                       <div class="card-content">
-                        <p>
-                          We could potentially put an image of artist here using ITUNES API
+                        <h4 style="font-weight:400; font-size: 30px;">Last FM Playcount</h4>
+                        <p id="lfm-playcount" style="color: rgb(168, 21, 21);">
+                          The total number of plays for the searched artist via Last FM will populate here
                         </p>
                       </div>
                     </div>
@@ -128,7 +134,6 @@
                 </div>
               </div>
               <div class="card-action">
-                <a href="#"></a>
               </div>
             </div>
           </div>
@@ -247,7 +252,6 @@
         <i class="large material-icons">mode_edit</i>
       </a>
       <ul>
-        <li><a class="btn-floating blue"><i class="material-icons">insert_chart</i></a></li>
         <li><a id="download-button" class="btn-floating green"><i class="material-icons">publish</i></a></li>
       </ul>
     </div>
@@ -256,11 +260,15 @@
         <h3>Created by: Seth | Justin | Kristen | David</h3>
     </footer>
   </body>
+  <!-- Script for Icon -->
   <script
     src="https://kit.fontawesome.com/e19c2364b2.js"
     crossorigin="anonymous"
   ></script>
+  <!-- JQuery script link -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Materialize script link -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Script.js file link -->
   <script src="./script.js"></script>
 </html>

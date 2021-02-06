@@ -17,6 +17,8 @@ $(document).ready(function () {
       var biography = response.artist.bio.summary.split("<")[0];
       $("#artist-bio").text(biography);
       var similar = response.artist.similar.artist;
+      $('#lfm-playcount').text(response.artist.stats.playcount)
+      $('#lfm-listeners').text(response.artist.stats.listeners)
 
       $("#similar-artists").empty();
 
@@ -61,7 +63,11 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (discResponse) {
       console.log(discResponse);
-      for (i = 0; i < 7; i++) {
+      var cardImg0 = discResponse.album[0].strAlbumThumb;
+      var cardImg1 = discResponse.album[1].strAlbumThumb;
+      $("#card-image0").attr("src", cardImg0);
+      $("#card-image1").attr("src", cardImg1);
+      for (i = 0; i < 8; i++) {
         var albumArt = discResponse.album[i].strAlbumThumb;
         var albumTitle = discResponse.album[i].strAlbum;
         var albumYear = discResponse.album[i].intYearReleased;
